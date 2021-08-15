@@ -1,0 +1,44 @@
+Buatlah sebuah web sederhana dengan tema "SEKOLAH" bebas mau apa saja dan menggunakan apa saja
+
+jika sudah selesai kirim ke GC kelas hanya screenshoot dari :
+- user interface
+- coding yang digunakan
+
+========== UI ==========
+home
+  - header
+  - navbar
+  - sambutan kepala sekolah
+  - list jurusan
+  - profil sekolah
+  - footer
+
+navbar
+  - home
+  - sambutan
+  - jurusan
+  - profil
+
+sambutan
+  poto kepala sekolah
+  lorem ipsum
+
+list jurusan
+  - rpl
+  - tkj
+  - mm
+  - elektro
+  - tata boga
+  - perhotelan
+  - akuntansi
+  - pariwisata
+
+profil sekolah
+  - sejarah singkat
+  - visi misi
+
+footer
+  made with hand by Angrypin
+  nama & kelas
+  blabla
+========================
