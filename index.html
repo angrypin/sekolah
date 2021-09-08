@@ -20,11 +20,17 @@
         </ul>
       </div>
       <div class="top-bar-right">
-        <ul class="menu">
+        <ul class="dropdown menu">
           <li><a href="#">beranda</a></li>
           <li><a href="#sambutan">sambutan</a></li>
           <li><a href="#jurusan">jurusan</a></li>
-          <li><a href="#profil">profil</a></li>
+          <li class="has-submenu"><a href="#profil">profil</a>
+            <ul class="submenu menu vertical" data-submenu>
+              <li><a href="#">fasilitas</a></li>
+              <li><a href="#">prestasi</a></li>
+              <li><a href="#">jurusan</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -34,6 +40,18 @@
         <h1>SMK Negeri 9 LoFI</h1>
       </div>
     </div>
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li>
+        <a href="#">Item 1</a>
+        <ul class="menu">
+          <li><a href="#">Item 1A</a></li>
+          <!-- ... -->
+        </ul>
+      </li>
+      <li><a href="#">Item 2</a></li>
+      <li><a href="#">Item 3</a></li>
+      <li><a href="#">Item 4</a></li>
+    </ul>
 
     <article class="grid-container">
       <div class="grid-x grid-margin-x" id="content">
