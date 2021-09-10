@@ -1,0 +1,49 @@
+Buatlah sebuah web sederhana dengan tema "SEKOLAH" bebas mau apa saja dan menggunakan apa saja
+
+jika sudah selesai kirim ke GC kelas hanya screenshoot dari :
+- user interface
+- coding yang digunakan
+
+========== UI ==========
+home
+  - header
+  - navbar
+  - sambutan kepala sekolah
+  - list jurusan
+  - profil sekolah
+  - footer
+
+navbar
+  - home
+  - sambutan
+  - jurusan
+  - profil
+
+sambutan
+  poto kepala sekolah
+  Sambutan Kepala Sekolah
+Assalamu'alaikum wr.wb.
+Puji syukur kepada Alloh SWT, Tuhan Yang Maha Esa yang telah memberikan rahmat dan anugerahNya sehingga website SMK Negeri 2 Yogyakarta ini dapat terbit. Salah satu tujuan dari website ini adalah untuk menjawab akan setiap kebutuhan informasi dengan memanfaatkan sarana teknologi informasi yang ada. Kami sadar sepenuhnya dalam rangka memajukan pendidikan di era berkembangnya Teknologi Informasi yang begitu pesat, sangat diperlukan berbagai sarana prasarana yang kondusif, kebutuhan berbagai informasi siswa, guru, orangtua maupun masyarakat, sehingga kami berusaha mewujudkan hal tersebut semaksimal mungkin. Semoga dengan adanya website ini dapat membantu dan bermanfaat, terutama informasi yang berhubungan dengan pendidikan, ilmu pengetahuan dan informasi seputar SMK Negeri 2 Yogyakarta.
+Besar harapan kami, sarana ini dapat memberi manfaat bagi semua pihak yang ada dilingkup pendidikan dan pemerhati pendidikan secara khusus bagi SMK Negeri 2 Yogyakarta.
+Akhirnya kami mengharapkan masukan dari berbagai pihak untuk website ini agar kami terus belajar dan meng-update diri, sehingga tampilan, isi dan mutu website akan terus berkembang dan lebih baik nantinya. Terima kasih atas kerjasamanya, maju terus untuk mencapai SMK Negeri 2 Yogyakarta yang lebih baik lagi.
+Wassalamu'alaikum wr.wb.
+
+list jurusan
+  - rpl
+  - tkj
+  - mm
+  - Teknik elektro
+  - tata boga
+  - perhotelan
+  - akuntansi
+  - pariwisata
+
+profil sekolah
+  - sejarah singkat
+  - visi misi
+
+footer
+  made with hand by Angrypin
+  nama & kelas
+  blabla
+========================
