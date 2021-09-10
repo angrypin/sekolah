@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+#home {
+  background-image: url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#home h1 {
+  color: #000;
+  font-family: Satisfy;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.uk-navbar-container {
+  background-color: #000!important;
+}
+
+.uk-navbar-container.uk-navbar a {
+  color: #fff;
+}
+
+article.uk-article {
+  padding: 6rem 0;
+}
+
+/* .uk-navbar-container {
+  background-color: rgb(19, 54, 53)!important;
+}
+
+.uk-navbar-container.uk-navbar a {
+  color: rgb(0, 217, 255);
+} */

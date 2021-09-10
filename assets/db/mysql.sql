@@ -324,7 +324,7 @@ CREATE TABLE `kelas` (
   `total_kelas` int(2) NOT NULL,
   `total_siswa` int(2) NOT NULL,
   CONSTRAINT `jurusan_id` FOREIGN KEY (`jurusan_id`) REFERENCES `jurusan`(`id`)
-); >:V
+);
 
 INSERT INTO `kelas` (`kelas`, `jurusan_id`, `total_kelas`, `total_siswa`) VALUES
 ('X', 1, 4, 31),
