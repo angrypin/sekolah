@@ -286,12 +286,12 @@ INSERT INTO `prestasi` (
 -- 
 CREATE TABLE `jurusan` (
   `id` int(2) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `short_name` char(5) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-	`long_name` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `shortNname` char(5) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+	`longName` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 );
 
-INSERT INTO `jurusan` (`short_name`, `long_name`, `description`) VALUES (
+INSERT INTO `jurusan` (`shortName`, `longName`, `description`) VALUES (
   'RPL', 'Rekayasa Perangkat Lunak',
   'Rekayasa Perangkat Lunak adalah satu bidang profesi yang mendalami cara-cara pengembangan perangkat lunak termasuk pembuatan, pemeliharaan, manajemen organisasi pengembangan perangkat lunak dan manajemen kualitas.'
 ), (
@@ -320,13 +320,13 @@ INSERT INTO `jurusan` (`short_name`, `long_name`, `description`) VALUES (
 CREATE TABLE `kelas` (
   `id` int(1) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `kelas` char(3) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `jurusan_id` int(2) NOT NULL,
-  `total_kelas` int(2) NOT NULL,
-  `total_siswa` int(2) NOT NULL,
-  CONSTRAINT `jurusan_id` FOREIGN KEY (`jurusan_id`) REFERENCES `jurusan`(`id`)
+  `jurusanId` int(2) NOT NULL,
+  `totalKelas` int(2) NOT NULL,
+  `totalSiswa` int(2) NOT NULL,
+  CONSTRAINT `jurusanId` FOREIGN KEY (`jurusanId`) REFERENCES `jurusan`(`id`)
 );
 
-INSERT INTO `kelas` (`kelas`, `jurusan_id`, `total_kelas`, `total_siswa`) VALUES
+INSERT INTO `kelas` (`kelas`, `jurusanId`, `totalKelas`, `totalSiswa`) VALUES
 ('X', 1, 4, 31),
 ('X', 2, 4, 30),
 ('X', 3, 2, 31),
