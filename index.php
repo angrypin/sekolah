@@ -1,5 +1,5 @@
 <?php
-const TITLE = 'SMK Negeri 9 LoFI';
+require_once('assets/php/config.php');
 ?>
 <!DOCTYPE HTML>
 <html>
