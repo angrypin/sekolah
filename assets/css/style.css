@@ -28,6 +28,11 @@ html {
   background-color: #000!important;
 }
 
+.uk-navbar-nav > li:hover > a {
+  background-color: #666;
+  color: #000!important;
+}
+
 .uk-navbar-container.uk-navbar a {
   color: #fff;
 }
