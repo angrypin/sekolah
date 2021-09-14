@@ -1,5 +1,18 @@
 <?php
 require_once('assets/php/config.php');
+$jurusan = $sql->query('SELECT `longName`, `description` FROM `jurusan`');
+$kelas = $sql->query('
+SELECT `kelas`.`kelas`, `jurusan`.`longName`, `kelas`.`totalKelas`, `kelas`.`totalSiswa`
+FROM `kelas` JOIN `jurusan`
+ON `kelas`.`jurusanId` = `jurusan`.`id`;
+');
+$fasilitas = $sql->query('SELECT `name`, `description`, `total` FROM `fasilitas`');
+$prestasi = $sql->query('SELECT * FROM `prestasi`');
+$total = array(
+  'kelas' => 0,
+  'siswa' => 0
+);
+unset($sql);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -25,6 +38,11 @@ require_once('assets/php/config.php');
         <div class="uk-navbar-left">
           <a class="uk-navbar-item uk-logo"><?=TITLE?></a>
         </div>
+        <div class="uk-navbar-center">
+          <ul class="uk-navbar-nav">
+            <li><a href="#login" class="uk-button uk-button-secondary" uk-toggle>login</a></li>
+          </ul>
+        </div>
         <div class="uk-navbar-right">
           <ul class="uk-navbar-nav">
             <li><a href="#">beranda</a></li>
@@ -42,6 +60,24 @@ require_once('assets/php/config.php');
             </li>
           </ul>
         </div>
+      </div>
+    </div>
+    <div class="uk-flex-top" uk-modal id="login">
+      <div class="uk-modal-dialog uk-margin-auto-vertical">
+        <form>
+          <div class="uk-margin">
+            <div class="uk-inline">
+              <span class="uk-form-icon" uk-icon="icon: user"></span>
+              <input type="text" class="uk-input">
+            </div>
+          </div>
+          <div class="uk-margin">
+            <div class="uk-inline">
+              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+              <input type="text" class="uk-input">
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     <div class="uk-container" id="idk">
@@ -69,26 +105,17 @@ require_once('assets/php/config.php');
             </tr>
           </thead>
           <tbody>
+<?php
+$no = 0;
+while($row = $jurusan->fetch()) {
+  $no++;
+?>
             <tr>
-              <td>1</td>
-              <td>blaldb</td>
-              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque molestias ab eius, harum id quod tenetur rerum voluptatum voluptates sed fugit minima, neque vitae quisquam repudiandae, enim voluptas totam qui.</td>
+              <td><?=$no?></td>
+              <td><?=$row[0]?></td>
+              <td><?=$row[1]?></td>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>blaldb</td>
-              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque molestias ab eius, harum id quod tenetur rerum voluptatum voluptates sed fugit minima, neque vitae quisquam repudiandae, enim voluptas totam qui.</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>blaldb</td>
-              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque molestias ab eius, harum id quod tenetur rerum voluptatum voluptates sed fugit minima, neque vitae quisquam repudiandae, enim voluptas totam qui.</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>blaldb</td>
-              <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque molestias ab eius, harum id quod tenetur rerum voluptatum voluptates sed fugit minima, neque vitae quisquam repudiandae, enim voluptas totam qui.</td>
-            </tr>
+<?php } ?>
           </tbody>
           <tfoot>
             <tr>
@@ -110,30 +137,18 @@ require_once('assets/php/config.php');
             </tr>
           </thead>
           <tbody>
+<?php
+while($row = $kelas->fetch()) {
+  $total['kelas'] += $row[2];
+  $total['siswa'] += $row[3];
+?>
             <tr>
-              <td>1</td>
-              <td>blaldb</td>
-              <td>69</td>
-              <td>69</td>
+              <td><?=$row[0]?></td>
+              <td><?=$row[1]?></td>
+              <td><?=$row[2]?></td>
+              <td><?=$row[3]?></td>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>blaldb</td>
-              <td>69</td>
-              <td>69</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>blaldb</td>
-              <td>69</td>
-              <td>69</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>blaldb</td>
-              <td>69</td>
-              <td>69</td>
-            </tr>
+<?php } ?>
           </tbody>
           <tfoot>
             <tr>
@@ -145,8 +160,8 @@ require_once('assets/php/config.php');
             <tr>
               <td></td>
               <td></td>
-              <td>69</td>
-              <td>420</td>
+              <td><?=$total['kelas']?></td>
+              <td><?=$total['siswa']?></td>
             </tr>
           </tfoot>
         </table>
@@ -170,7 +185,78 @@ require_once('assets/php/config.php');
           <li>Melaksanakan pendidikan karakter agar terwujud lulusan yang beriman, bertakwa, dan berakhlak mulia</li>
           <li>Melaksanakan program pengembangan sekolah ramah sosial dan ramah lingkungan</li>
         </ul>
+        <h2 class="uk-article-title">Fasilitas</h2>
+        <hr class="uk-divider-small">
+        <table class="uk-table uk-table-striped uk-table-hover uk-table-justify">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>nama</th>
+              <th>deskripsi</th>
+              <th>Jumlah</th>
+            </tr>
+          </thead>
+          <tbody>
+<?php
+$no = 0;
+while($row = $fasilitas->fetch()) {
+  $no++;
+?>
+            <tr>
+              <td><?=$no?></td>
+              <td><?=$row[0]?></td>
+              <td><?=$row[1]?></td>
+              <td><?=$row[2]?></td>
+            </tr>
+<?php } ?>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>#</th>
+              <th>nama</th>
+              <th>deskripsi</th>
+              <th>Jumlah</th>
+            </tr>
+          </tfoot>
+        </table>
+        <h2 class="uk-divider-title">Prestasi</h2>
+        <table class="uk-table uk-table-striped uk-table-hover uk-table-justify">
+          <thead>
+            <tr>
+              <th>tahun</th>
+              <th>nama</th>
+              <th>penghargaan</th>
+              <th>peringkat</th>
+              <th>jenis</th>
+              <th>tingkat</th>
+            </tr>
+          </thead>
+          <tbody>
+<?php while($row = $prestasi->fetch()) { ?>
+            <tr>
+              <td><?=$row[1]?></td>
+              <td><?=$row[2]?></td>
+              <td><?=$row[3]?></td>
+              <td><?=$row[4]?></td>
+              <td><?=$row[5]?></td>
+              <td><?=$row[6]?></td>
+            </tr>
+<?php } ?>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>tahun</th>
+              <th>nama</th>
+              <th>penghargaan</th>
+              <th>peringkat</th>
+              <th>jenis</th>
+              <th>tingkat</th>
+            </tr>
+          </tfoot>
+        </table>
       </article>
+      <hr class="uk-divider-icon">
+      <p class="uk-text-center">Made with Hand by Angrypin <hr></p>
     </div>
   </body>
 </html>
