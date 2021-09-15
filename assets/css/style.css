@@ -57,11 +57,3 @@ h1.uk-article-title {
 .uk-divider-icon::before, .uk-divider-icon::after {
   border-bottom-color: #000;
 }
-
-/* .uk-navbar-container {
-  background-color: rgb(19, 54, 53)!important;
-}
-
-.uk-navbar-container.uk-navbar a {
-  color: rgb(0, 217, 255);
-} */
