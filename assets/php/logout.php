@@ -1,0 +1,9 @@
+<?php
+session_start();
+unset($_SESSION['loged_in']);
+unset($_SESSION['user']);
+unset($_SESSION['name']);
+unset($_SESSION['level']);
+print_r($_SESSION);
+session_destroy();
+?>
