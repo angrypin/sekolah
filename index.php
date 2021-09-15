@@ -12,6 +12,14 @@ $total = array(
   'kelas' => 0,
   'siswa' => 0
 );
+session_start();
+if($_SESSION['loged_in']) {
+  $middleText = $_SESSION['user'];
+  $hashTag = 'user';
+} else {
+  $middleText = 'login';
+  $hashTag = 'login';
+}
 unset($sql);
 ?>
 <!DOCTYPE HTML>
@@ -40,7 +48,7 @@ unset($sql);
         </div>
         <div class="uk-navbar-center">
           <ul class="uk-navbar-nav">
-            <li><a href="#login" class="uk-button uk-button-secondary" uk-toggle>login</a></li>
+            <li><a href="#<?=$hashTag?>" class="uk-button uk-button-secondary" uk-toggle><?=$middleText?></a></li>
           </ul>
         </div>
         <div class="uk-navbar-right">
@@ -62,22 +70,64 @@ unset($sql);
         </div>
       </div>
     </div>
-    <div class="uk-flex-top" uk-modal id="login">
+    <div class="uk-flex-top" uk-modal id="<?=$hashTag?>">
       <div class="uk-modal-dialog uk-margin-auto-vertical">
-        <form>
-          <div class="uk-margin">
-            <div class="uk-inline">
-              <span class="uk-form-icon" uk-icon="icon: user"></span>
-              <input type="text" class="uk-input">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+<?php if($_SESSION['loged_in']) { ?>
+        <div class="uk-modal-header">
+          <h1 class="uk-modal-title">informasi user</h1>
+        </div>
+        <div class="uk-modal-body">
+          <div class="uk-container">
+            <div class="uk-panel">
+              <img class="uk-align-left uk-margin-remove-adjacent" src="assets/images/user.png" alt="<?=$_SESSION['name']?>" style="width: 200px">
+              <table>
+                <tr>
+                  <td>Nama</td>
+                  <td>:</td>
+                  <td><?=$_SESSION['name']?></td>
+                </tr>
+                <tr>
+                  <td>NIS</td>
+                  <td>:</td>
+                  <td><?=$_SESSION['user']?></td>
+                </tr>
+                <tr>
+                  <td>level</td>
+                  <td>:</td>
+                  <td><?=$_SESSION['level']?></td>
+                </tr>
+              </table>
             </div>
           </div>
-          <div class="uk-margin">
-            <div class="uk-inline">
-              <span class="uk-form-icon" uk-icon="icon: lock"></span>
-              <input type="text" class="uk-input">
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+          <button id="buttonLogout" class="uk-button uk-button-danger" type="button">Logout</button>
+        </div>
+<?php } else { ?>
+        <div class="uk-modal-header">
+          <h1 class="uk-modal-title">login</h1>
+        </div>
+        <div class="uk-modal-body">
+          <form>
+            <div class="uk-margin">
+              <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input id="username" type="text" class="uk-input" placeholder="username">
+              </div>
             </div>
-          </div>
-        </form>
+            <div class="uk-margin">
+              <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                <input id="password" type="password" class="uk-input" placeholder="password">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+          <button id="buttonLogin" class="uk-button uk-button-primary" type="button">Login</button>
+        </div>
+<?php } ?>
       </div>
     </div>
     <div class="uk-container" id="idk">
@@ -258,5 +308,6 @@ while($row = $fasilitas->fetch()) {
       <hr class="uk-divider-icon">
       <p class="uk-text-center">Made with Hand by Angrypin <hr></p>
     </div>
+    <script type="text/javascript" src="assets/js/script.js"></script>
   </body>
 </html>
