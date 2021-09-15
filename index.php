@@ -216,7 +216,7 @@ while($row = $kelas->fetch()) {
           </tfoot>
         </table>
         <hr class="uk-divider-icon">
-        <h2 class="uk-article-title">Profil sekolah</h2>
+        <h2 class="uk-article-title" id="profil">Profil sekolah</h2>
         <hr class="uk-divider-small">
         <h4>sejarah singkat</h4>
         <p>SMK Negeri 9 LoFI merupakan salah satu Lembaga Pendidikan Menengah Kejuruan di Kota Maya yang menyelenggarakan Program Pendidikan Kejuruan 4 Tahun, dan merupakan salah satu SMK dari 8 (delapan) SMK Negeri yang memiliki program 4 (empat) Tahun, di atas tanah seluas 3,4 Ha, dan telah menerima siswa sejak sekolah ini belum dibangun, yang diresmikan pada tanggal 8/13/21.</p>
@@ -235,7 +235,7 @@ while($row = $kelas->fetch()) {
           <li>Melaksanakan pendidikan karakter agar terwujud lulusan yang beriman, bertakwa, dan berakhlak mulia</li>
           <li>Melaksanakan program pengembangan sekolah ramah sosial dan ramah lingkungan</li>
         </ul>
-        <h2 class="uk-article-title">Fasilitas</h2>
+        <h2 class="uk-article-title" id="fasilitas">Fasilitas</h2>
         <hr class="uk-divider-small">
         <table class="uk-table uk-table-striped uk-table-hover uk-table-justify">
           <thead>
@@ -269,7 +269,7 @@ while($row = $fasilitas->fetch()) {
             </tr>
           </tfoot>
         </table>
-        <h2 class="uk-divider-title">Prestasi</h2>
+        <h2 class="uk-divider-title" id="prestasi">Prestasi</h2>
         <table class="uk-table uk-table-striped uk-table-hover uk-table-justify">
           <thead>
             <tr>
