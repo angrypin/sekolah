@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 const TITLE = 'SMK Negeri 9 LoFI';
 
 $_SESSION['loged_in'] = isset($_SESSION['loged_in']) ? true : false;
